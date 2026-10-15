@@ -36,7 +36,15 @@ const HouseList = () => {
                         <th>Asking Price</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    {houses.map(house => (
+                        <tr key={house.id}>
+                            <td>{house.address}</td>
+                            <td>{house.country}</td>
+                            <td>{house.price}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
         </>
     )
