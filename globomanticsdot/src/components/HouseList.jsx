@@ -41,9 +41,7 @@ const HouseList = () => {
                 <tbody>
                     {houses.map(house => (
                         <HouseRow key={house.id}
-                            address={house.address}
-                            country={house.country}
-                            price={house.price}
+                            {...house}
 
                         />
                     ))}
