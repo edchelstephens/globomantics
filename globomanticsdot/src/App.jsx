@@ -5,7 +5,7 @@ import "./App.css"
 const App = () => {
   return (
     <>
-      <Banner headerText="Providing houses all over the world! " />
+      <Banner> Providing houses all over the world </Banner>
 
     </>
   )
