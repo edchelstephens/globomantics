@@ -8,7 +8,7 @@ const subtitleStyle = {
     color: "coral"
 }
 
-const Banner = ({ children }) => {
+const Banner = ({ headerText }) => {
     return (
 
         <header className="row mb-4">
@@ -19,7 +19,7 @@ const Banner = ({ children }) => {
                     alt="logo"
                 />
             </div>
-            <div className="col-7 mt-5" style={subtitleStyle}>{children}</div>
+            <div className="col-7 mt-5" style={subtitleStyle}>{headerText}</div>
 
         </header>
 

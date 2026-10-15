@@ -1,14 +1,16 @@
 import Banner from "./components/Banner";
+import HouseList from "./components/HouseList";
 import "./App.css"
 
-const jsx = <div>Hello!</div>
+
 
 
 const App = () => {
   return (
     <>
-      {jsx}
-      <Banner><button>Providing houses all over the world </button></Banner>
+
+      <Banner headerText="Providing houses all over the world" />
+      <HouseList />
 
     </>
   )
