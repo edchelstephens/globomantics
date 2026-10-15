@@ -1,10 +1,12 @@
 import Banner from "./components/Banner";
 import "./App.css"
 
+
 const App = () => {
   return (
     <>
-      <Banner />
+      <Banner headerText="Providing houses all over the world! " />
+
     </>
   )
 };

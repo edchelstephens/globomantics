@@ -1,13 +1,14 @@
 import logo from "../assets/GloboDot.png"
 import { logo as logoClass } from "./Banner.module.css"
 
+
 const subtitleStyle = {
     fontStyle: "italic",
     fontSize: "x-large",
     color: "coral"
 }
 
-const Banner = () => {
+const Banner = ({ headerText }) => {
     return (
 
         <header className="row mb-4">
@@ -18,7 +19,7 @@ const Banner = () => {
                     alt="logo"
                 />
             </div>
-            <div className="col-7 mt-5" style={subtitleStyle}>Providing houses all over the world! </div>
+            <div className="col-7 mt-5" style={subtitleStyle}>{headerText}</div>
 
         </header>
 
@@ -26,5 +27,7 @@ const Banner = () => {
 
 
 };
+
+
 
 export default Banner;
