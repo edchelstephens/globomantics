@@ -1,6 +1,8 @@
+import { useState } from "react";
+
 import HouseRow from "./HouseRow";
 
-const houses = [
+const houseArray = [
     {
         id: 1,
         address: "Building E, Room 210, Familia Apartments, Canitoan",
@@ -23,6 +25,37 @@ const houses = [
 
 
 const HouseList = () => {
+
+    const [houses, setHouses] = useState(houseArray);
+
+
+
+    const addHouse = () => {
+
+
+        setHouses(
+            currentHouses => (
+                [
+                    ...currentHouses,
+                    {
+                        id: Math.max(0, ...currentHouses.map(house => house.id)) + 1,
+                        address: "Dream House, Xavier Golf Estates",
+                        country: "Philippines",
+                        price: 20_000_000
+                    }
+                ]));
+    };
+
+    const deleteLastHouse = () => {
+
+
+        setHouses(
+            currentHouses => currentHouses.slice(0, -1)
+        )
+
+
+    }
+
     return (
         <>
             <div className="row mb-2">
@@ -47,6 +80,27 @@ const HouseList = () => {
                     ))}
                 </tbody>
             </table>
+            <button
+                className="btn btn-primary"
+                onClick={addHouse}
+            >
+                Add
+            </button>
+
+
+            <br />
+            <br />
+            <button className="btn btn-danger"
+                onClick={deleteLastHouse}
+            >
+                Delete last house
+            </button>
+
+            <br />
+            <br />
+            <button className="btn btn-secondary">
+                House Count: {houses.length}
+            </button>
         </>
     )
 };
