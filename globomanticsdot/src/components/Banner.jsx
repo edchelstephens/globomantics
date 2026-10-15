@@ -1,4 +1,4 @@
-import logo from "../assets/GloboDotBlue.png"
+import logo from "../assets/GloboDot.png"
 
 const Banner = () => {
     return (
