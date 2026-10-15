@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
 
-      <Banner headerText="Providing houses all over the world" />
+      <Banner headerText="Providing houses all over the Philippines!" />
       <HouseList />
 
     </>
