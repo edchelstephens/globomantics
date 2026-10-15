@@ -1,11 +1,14 @@
 import Banner from "./components/Banner";
 import "./App.css"
 
+const jsx = <div>Hello!</div>
+
 
 const App = () => {
   return (
     <>
-      <Banner> Providing houses all over the world </Banner>
+      {jsx}
+      <Banner><button>Providing houses all over the world </button></Banner>
 
     </>
   )
