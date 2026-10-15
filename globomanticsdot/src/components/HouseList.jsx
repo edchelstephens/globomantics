@@ -40,7 +40,12 @@ const HouseList = () => {
                 </thead>
                 <tbody>
                     {houses.map(house => (
-                        <HouseRow house={house} key={house.id} />
+                        <HouseRow key={house.id}
+                            address={house.address}
+                            country={house.country}
+                            price={house.price}
+
+                        />
                     ))}
                 </tbody>
             </table>
