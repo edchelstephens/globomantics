@@ -6,7 +6,7 @@ import LoadingIndicator from "./LoadingIndicator";
 
 
 
-const HouseList = () => {
+const HouseList = ({ selectHouse }) => {
 
 
 
@@ -111,8 +111,10 @@ const HouseList = () => {
                     </thead>
                     <tbody>
                         {houses.map(house => (
-                            <HouseRow key={house.id}
+                            <HouseRow
+                                key={house.id}
                                 house={house}
+                                selectHouse={selectHouse}
 
                             />
                         ))}
