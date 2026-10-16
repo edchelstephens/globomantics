@@ -7,7 +7,7 @@ import currencyFormatter from "../helpers/currencyFormatter";
 
 const HouseRow = ({ house, selectHouse }) => {
 
-
+    throw Error("Some error");
 
     return (
         <tr onClick={() => { selectHouse(house) }}>
