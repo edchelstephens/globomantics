@@ -10,9 +10,12 @@ const House = ({ house }) => {
                     <div className="row">
                         <img
                             className="img-fluid"
-                            src={house.photo
-                                ? `./housesImages/${house.photo}.jpeg`
-                                : "./defaultphoto.png"
+                            src={
+                                house.photo ?
+                                    `/houseImages/${house.photo}.jpeg` :
+                                    "/defaultphoto.png"
+
+
                             }
                             alt="House pic"
                         />
