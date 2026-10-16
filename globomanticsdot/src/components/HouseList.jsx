@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import HouseRow from "./HouseRow";
 import LoadingIndicator from "./LoadingIndicator";
+import useHouses from "../hooks/useHouses";
 
 
 
@@ -9,32 +10,8 @@ import LoadingIndicator from "./LoadingIndicator";
 const HouseList = ({ selectHouse }) => {
 
 
-
-    const [houses, setHouses] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-
-    useEffect(() => {
-
-
-        const fetchHouses = async () => {
-            try {
-                setIsLoading(true);
-                const response = await fetch("http://localhost:5000/houses/");
-                const housesData = await response.json();
-                setHouses(housesData);
-
-            } catch (error) {
-                console.log("Error fetching houses:", error)
-            } finally {
-                setIsLoading(false);
-            }
-
-
-        };
-        fetchHouses();
-
-    }, [])
-
+    const { houses, setHouses } = useHouses(setIsLoading);
 
 
     const addHouse = async () => {
@@ -111,11 +88,9 @@ const HouseList = ({ selectHouse }) => {
                     </thead>
                     <tbody>
                         {houses.map(house => (
-                            <HouseRow
-                                key={house.id}
+                            <HouseRow key={house.id}
                                 house={house}
                                 selectHouse={selectHouse}
-
                             />
                         ))}
                     </tbody>
