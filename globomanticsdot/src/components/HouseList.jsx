@@ -46,7 +46,7 @@ const HouseList = () => {
                 country: "Philippines",
                 description: "Your dream house at Xavier Golf estates. Prime location",
                 price: 400_000,
-                photo: "462357"
+                photo: "462358"
             };
 
             const response = await fetch("http://localhost:5000/house/", {
