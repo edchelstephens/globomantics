@@ -1,5 +1,7 @@
 import Banner from "./components/Banner";
 import HouseList from "./components/HouseList";
+import LoadingIndicator from "./components/LoadingIndicator";
+import { Suspense } from "react";
 import "./App.css"
 
 
@@ -10,7 +12,9 @@ const App = () => {
     <>
 
       <Banner headerText="Providing houses all over the Philippines!" />
-      <HouseList />
+      <Suspense fallback={<LoadingIndicator text="Loading..." />}>
+        <HouseList />
+      </Suspense>
 
     </>
   )
