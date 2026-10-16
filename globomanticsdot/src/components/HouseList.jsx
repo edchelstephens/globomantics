@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import HouseRow from "./HouseRow";
+import HouseRow, { HouseRowMemoized } from "./HouseRow";
 
 const houseArray = [
     {
@@ -73,7 +73,7 @@ const HouseList = () => {
                 </thead>
                 <tbody>
                     {houses.map(house => (
-                        <HouseRow key={house.id}
+                        <HouseRowMemoized key={house.id}
                             house={house}
 
                         />
