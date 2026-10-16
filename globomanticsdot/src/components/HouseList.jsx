@@ -7,9 +7,12 @@ import HouseRow from "./HouseRow";
 
 const HouseList = () => {
 
+    console.log("useState() called")
     const [houses, setHouses] = useState([]);
 
     useEffect(() => {
+
+        console.log("useEffect() called")
         const fetchHouses = async () => {
             const response = await fetch("http://localhost:5000/house");
             const housesData = await response.json()
@@ -17,13 +20,13 @@ const HouseList = () => {
         };
         fetchHouses();
 
-    })
+    }, [])
 
-
+    console.log("addHouse function declared ")
 
     const addHouse = () => {
-
-
+        console.error("addHouse called")
+        console.error("setHouses called, changing the state, should trigger a re render")
         setHouses(
             currentHouses => (
                 [
@@ -35,18 +38,11 @@ const HouseList = () => {
                         price: 20_000_000
                     }
                 ]));
+        console.warn("setHouses called, change state queued and should be processed")
     };
 
-    const deleteLastHouse = () => {
 
-
-        setHouses(
-            currentHouses => currentHouses.slice(0, -1)
-        )
-
-
-    }
-
+    console.log("returning jsx for HouseList component")
     return (
         <>
             <div className="row mb-2">
