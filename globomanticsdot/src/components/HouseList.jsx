@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 
 import HouseRow from "./HouseRow";
 import LoadingIndicator from "./LoadingIndicator";
@@ -10,8 +10,7 @@ import useHouses from "../hooks/useHouses";
 const HouseList = ({ selectHouse }) => {
 
 
-    const [isLoading, setIsLoading] = useState(false);
-    const { houses, setHouses } = useHouses(setIsLoading);
+    const { houses, setHouses, isLoading, setIsLoading } = useHouses();
 
 
     const addHouse = async () => {

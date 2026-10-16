@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 
 
 
-const useHouses = (setIsLoading) => {
+const useHouses = () => {
 
     const [houses, setHouses] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const fetchHouses = async () => {
@@ -28,7 +29,9 @@ const useHouses = (setIsLoading) => {
 
     return {
         houses,
-        setHouses
+        setHouses,
+        isLoading,
+        setIsLoading
     };
 };
 
