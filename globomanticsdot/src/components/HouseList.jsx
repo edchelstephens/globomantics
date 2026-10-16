@@ -65,7 +65,7 @@ const HouseList = () => {
                 className="btn btn-primary"
                 onClick={addHouse}
             >
-                Add
+                <i className="bi bi-plus-circle me-1"></i>Add
             </button>
 
 
@@ -77,6 +77,7 @@ const HouseList = () => {
                     <button className="btn btn-danger"
                         onClick={deleteLastHouse}
                     >
+                        <i className="bi bi-trash me-1"></i>
                         Delete last house
                     </button>
                 </>
@@ -86,7 +87,7 @@ const HouseList = () => {
             <br />
             <br />
             <button className="btn btn-secondary">
-                House Count: {houses.length}
+                <i className="bi bi-123 me-1"></i> House Count: {houses.length}
             </button>
         </>
     )
