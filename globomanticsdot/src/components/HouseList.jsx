@@ -1,41 +1,39 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import HouseRow from "./HouseRow";
 import LoadingIndicator from "./LoadingIndicator";
 
 
-const fetchHouses = fetch("http://localhost:5000/houses/").then(
-    response => response.json()
-);
+
 
 const HouseList = () => {
 
-    const housesResult = use(fetchHouses)
 
-    const [houses, setHouses] = useState(housesResult);
+
+    const [houses, setHouses] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    // useEffect(() => {
+    useEffect(() => {
 
 
-    //     const fetchHouses = async () => {
-    //         try {
-    //             setIsLoading(true);
-    //             const response = await fetch("http://localhost:5000/houses/");
-    //             const housesData = await response.json();
-    //             setHouses(housesData);
+        const fetchHouses = async () => {
+            try {
+                setIsLoading(true);
+                const response = await fetch("http://localhost:5000/houses/");
+                const housesData = await response.json();
+                setHouses(housesData);
 
-    //         } catch (error) {
-    //             console.log("Error fetching houses:", error)
-    //         } finally {
-    //             setIsLoading(false);
-    //         }
+            } catch (error) {
+                console.log("Error fetching houses:", error)
+            } finally {
+                setIsLoading(false);
+            }
 
 
-    //     };
-    //     fetchHouses();
+        };
+        fetchHouses();
 
-    // }, [])
+    }, [])
 
 
 
