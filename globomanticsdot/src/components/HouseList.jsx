@@ -80,25 +80,7 @@ const HouseList = () => {
 
 
 
-            {houses.length > 0 && (
-                <>
-                    <br />
-                    <br />
-                    <button className="btn btn-danger"
-                        onClick={deleteLastHouse}
-                    >
-                        <i className="bi bi-trash me-1"></i>
-                        Delete last house
-                    </button>
-                </>
-            )}
 
-
-            <br />
-            <br />
-            <button className="btn btn-secondary">
-                <i className="bi bi-123 me-1"></i> House Count: {houses.length}
-            </button>
         </>
     )
 };
