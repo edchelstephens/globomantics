@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import HouseRow from "./HouseRow";
 
@@ -8,6 +8,16 @@ import HouseRow from "./HouseRow";
 const HouseList = () => {
 
     const [houses, setHouses] = useState([]);
+
+    useEffect(() => {
+        const fetchHouses = async () => {
+            const response = await fetch("http://localhost:5000/house");
+            const housesData = await response.json()
+            setHouses(housesData)
+        };
+        fetchHouses();
+
+    })
 
 
 

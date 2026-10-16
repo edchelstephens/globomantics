@@ -8,7 +8,7 @@ import currencyFormatter from "../helpers/currencyFormatter";
 const HouseRow = ({ house }) => {
     return (
         <tr>
-            <td>{house.id} - {house.address}</td>
+            <td>{house.address}</td>
             <td>{house.country}</td>
             <td>{currencyFormatter.format(house.price)}</td>
         </tr>
