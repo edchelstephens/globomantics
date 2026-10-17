@@ -1,5 +1,9 @@
 import logo from "../assets/GloboDot.png"
+
+import { useContext } from "react";
 import { logo as logoClass } from "./Banner.module.css"
+import navigationContext from "../navigation/navigationContext";
+import navValues from "../navigation/navValues";
 
 
 const subtitleStyle = {
@@ -9,6 +13,10 @@ const subtitleStyle = {
 }
 
 const Banner = ({ headerText }) => {
+
+
+    const { navigate } = useContext(navigationContext)
+
     return (
 
         <header className="row mb-4">
@@ -17,6 +25,7 @@ const Banner = ({ headerText }) => {
                     src={logo}
                     className={logoClass}
                     alt="logo"
+                    onClick={() => navigate(navValues.home)}
                 />
             </div>
             <div className="col-7 mt-5" style={subtitleStyle}>{headerText}</div>
