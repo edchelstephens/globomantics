@@ -45,8 +45,8 @@ const useBids = (houseId) => {
 
     const addBid = async (bid) => {
         addOptimisticBid(bid);
-        const postBid = await postBid(bid);
-        setBids([...bids, postBid]);
+        const postedBid = await postBid(bid);
+        setBids([...bids, postedBid]);
     }
 
     return { bids: optimisticBids, isLoading, addBid }
