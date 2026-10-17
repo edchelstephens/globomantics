@@ -1,29 +1,43 @@
+import { useCallback, useState } from "react";
+
 import Banner from "./components/Banner";
+import navValues from "./navigation/navValues";
 import HouseList from "./components/HouseList";
-import House from "./components/House";
-import { useState } from "react";
+import navigationContext from "./navigation/navigationContext";
+
 import "./App.css"
+
+
 
 
 const App = () => {
 
-  const [selectedHouse, setSelectedHouse] = useState();
+  const navigate = useCallback(
+    navTo => setNav({
+      current: navTo,
+      navigate
+    }), []
+  )
 
-  const setSelectedHouseWrapper = (house) => {
-    // do checks here so that the house argument is indeed a valid house
-    // this idea is easily done though with TypeScript
-    setSelectedHouse(house);
-  }
+
+  const [nav, setNav] = useState(
+    {
+      current: navValues.home,
+      navigate,
+    }
+  )
+
+
+
+
 
   return (
-    <>
-
+    <navigationContext.Provider value={nav}>
       <Banner headerText="Providing houses all over the Philippines!" />
+      <HouseList />
 
-      {selectedHouse ? <House house={selectedHouse} /> : <HouseList selectHouse={setSelectedHouseWrapper} />}
 
-
-    </>
+    </navigationContext.Provider>
   )
 };
 

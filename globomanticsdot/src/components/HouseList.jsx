@@ -7,7 +7,7 @@ import useHouses from "../hooks/useHouses";
 import ErrorBoundary from "./ErrorBoundary";
 
 
-const HouseList = ({ selectHouse }) => {
+const HouseList = () => {
 
 
     const { houses, setHouses, isLoading, setIsLoading } = useHouses();
@@ -90,7 +90,7 @@ const HouseList = ({ selectHouse }) => {
                             {houses.map(house => (
                                 <HouseRow key={house.id}
                                     house={house}
-                                    selectHouse={selectHouse}
+                                   
                                 />
                             ))}
                         </ErrorBoundary>
