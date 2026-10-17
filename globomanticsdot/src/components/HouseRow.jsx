@@ -9,7 +9,7 @@ import { useNavigate } from "react-router";
 const HouseRow = ({ house }) => {
 
 
-    const { navigate } = useNavigate();
+    const navigate = useNavigate();
 
     return (
         <tr onClick={() => navigate('/house', { state: { house } })}>

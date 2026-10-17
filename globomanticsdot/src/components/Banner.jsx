@@ -12,7 +12,7 @@ const subtitleStyle = {
 const Banner = ({ headerText }) => {
 
 
-    const { navigate } = useNavigate();
+    const navigate = useNavigate();
 
     return (
 
