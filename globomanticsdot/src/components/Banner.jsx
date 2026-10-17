@@ -1,6 +1,4 @@
 import logo from "../assets/GloboDot.png"
-
-import { useContext } from "react";
 import { logo as logoClass } from "./Banner.module.css"
 import { useNavigate } from "react-router";
 
