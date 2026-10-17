@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react";
+import "./App.css"
 
 import Banner from "./components/Banner";
 import navValues from "./navigation/navValues";
 import HouseList from "./components/HouseList";
 import navigationContext from "./navigation/navigationContext";
-
-import "./App.css"
+import ComponentPicker from "./components/ComponentPicker";
 
 
 
@@ -34,7 +34,7 @@ const App = () => {
   return (
     <navigationContext.Provider value={nav}>
       <Banner headerText="Providing houses all over the Philippines!" />
-      <HouseList />
+      <ComponentPicker currentNavLocation={nav.current} />
 
 
     </navigationContext.Provider>
