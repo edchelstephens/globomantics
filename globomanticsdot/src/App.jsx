@@ -13,8 +13,9 @@ import ComponentPicker from "./components/ComponentPicker";
 const App = () => {
 
   const navigate = useCallback(
-    navTo => setNav({
+    (navTo, param) => setNav({
       current: navTo,
+      param,
       navigate
     }), []
   )
