@@ -4,8 +4,10 @@ import "./App.css"
 import Banner from "./components/Banner";
 import navValues from "./navigation/navValues";
 import HouseList from "./components/HouseList";
-import navigationContext from "./navigation/navigationContext";
+
 import ComponentPicker from "./components/ComponentPicker";
+
+import { BrowserRouter, Route, Routes } from "react-router";
 
 
 
