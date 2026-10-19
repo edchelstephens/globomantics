@@ -1,22 +1,18 @@
 import currencyFormatter from "../helpers/currencyFormatter";
 import useBids from "../hooks/useBids";
-
+import TableHead from "./TableHead";
 
 const Bids = ({ house }) => {
 
     const { bids, setBids, isLoading, setIsLoading } = useBids(house.id);
+    const headerTexts = ["Bidder", "Amount"]
 
     return (
         <>
             <div className="row mt-4">
                 <div className="col-12">
                     <table className="table table-sm">
-                        <thead>
-                            <tr>
-                                <th>Bidder</th>
-                                <th>Amount</th>
-                            </tr>
-                        </thead>
+                        <TableHead headerTexts={headerTexts} />
                         <tbody>
                             {bids.map((b) => (
                                 <tr key={b.id}>
