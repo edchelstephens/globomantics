@@ -5,6 +5,7 @@ import LoadingIndicator from "./LoadingIndicator";
 import useHouses from "../hooks/useHouses";
 
 import ErrorBoundary from "./ErrorBoundary";
+import TableHead from "./TableHead";
 
 
 const HouseList = () => {
@@ -67,7 +68,7 @@ const HouseList = () => {
     };
 
 
-
+    const headerTexts = ["Address", "Country", "Asking Price"]
     return (
 
         isLoading ? <LoadingIndicator text="Loading data..." /> :
@@ -78,19 +79,13 @@ const HouseList = () => {
                     </h5>
                 </div>
                 <table className="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Address</th>
-                            <th>Country</th>
-                            <th>Asking Price</th>
-                        </tr>
-                    </thead>
+                    <TableHead headerTexts={headerTexts} />
                     <tbody>
                         <ErrorBoundary fallback="Error loading house rows!">
                             {houses.map(house => (
                                 <HouseRow key={house.id}
                                     house={house}
-                                   
+
                                 />
                             ))}
                         </ErrorBoundary>
