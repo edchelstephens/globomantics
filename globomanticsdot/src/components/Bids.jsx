@@ -1,6 +1,7 @@
 import currencyFormatter from "../helpers/currencyFormatter";
 import useBids from "../hooks/useBids";
 import TableHead from "./TableHead";
+import LoadingIndicator from "./LoadingIndicator";
 
 const Bids = ({ house }) => {
 
@@ -8,7 +9,7 @@ const Bids = ({ house }) => {
     const headerTexts = ["Bidder", "Amount"]
 
     return (
-        <>
+        isLoading ? <LoadingIndicator text="Loading data..." /> : (<>
             <div className="row mt-4">
                 <div className="col-12">
                     <table className="table table-sm">
@@ -24,7 +25,10 @@ const Bids = ({ house }) => {
                     </table>
                 </div>
             </div>
-        </>
+        </>)
+
+
+
     )
 };
 
