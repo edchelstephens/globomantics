@@ -1,56 +1,40 @@
-import { useEffect, useOptimistic, useState } from "react";
+
+
+
+import { useEffect, useState } from "react";
 
 
 const useBids = (houseId) => {
     const [bids, setBids] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [optimisticBids, addOptimisticBid] = useOptimistic(bids, (bids, newbid) => [...bids, newbid]);
 
     useEffect(() => {
 
         const fetchBids = async () => {
-            setIsLoading(true);
             try {
-                const response = await fetch(`http://localhost:5000/bids/${houseId}/`)
-                const bids = await response.json();
-                setBids(bids);
+                setIsLoading(true);
+
+                const response = await fetch(`http://localhost:5000/bids/${houseId}`)
+                const bidsData = await response.json();
+                setBids(bidsData)
+
             } catch (error) {
                 console.log(error)
             } finally {
                 setIsLoading(false);
             }
-        }
+        };
 
         fetchBids();
-
     }, [houseId])
 
-
-    const postBid = async (bid) => {
-        const response = await fetch("http://localhost:5000/bid/"{
-            method: "POST",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(bid)
-        })
-
-        const bidResponse = await response.json()
-
-        return bidResponse
-
+    return {
+        bids,
+        setBids,
+        isLoading,
+        setIsLoading
     }
 
-
-    const addBid = async (bid) => {
-        addOptimisticBid(bid);
-        const postedBid = await postBid(bid);
-        setBids([...bids, postedBid]);
-    }
-
-    return { bids: optimisticBids, isLoading, addBid }
-
-}
+};
 
 export default useBids;
