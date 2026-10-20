@@ -95,7 +95,7 @@ const HouseList = () => {
                     className="btn btn-primary"
                     onClick={addHouse}
                 >
-                    <i className="bi bi-plus-circle me-1"></i>Add
+                    <i className="bi bi-plus"></i> Add
                 </button>
             </>
 

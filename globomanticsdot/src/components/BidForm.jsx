@@ -37,7 +37,7 @@ const BidForm = ({ newBid, setNewBid, bidSubmitAction }) => {
                     type="submit"
                     className="btn btn-primary"
                 >
-                    Add
+                    <i className="bi bi-plus"></i> Add
                 </button>
             </div>
         </form>
