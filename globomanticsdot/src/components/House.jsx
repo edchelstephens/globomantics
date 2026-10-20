@@ -1,6 +1,7 @@
 import currencyFormatter from "../helpers/currencyFormatter";
 import { useLocation } from "react-router";
 import Bids from "./Bids";
+import NavigationButton from "./NavigationLink";
 
 
 const House = () => {
@@ -47,6 +48,8 @@ const House = () => {
                 </div>
 
             </div>
+
+            <NavigationButton text="Back to Home" route="/" iElementClassName="bi bi-arrow-left" />
 
 
 
