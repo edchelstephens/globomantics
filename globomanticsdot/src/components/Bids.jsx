@@ -8,10 +8,10 @@ import { useState } from "react";
 const Bids = ({ house }) => {
 
     const headerTexts = ["Bidder", "Amount"]
-    
+
 
     const { bids, isLoading, addBid } = useBids(house.id);
-   
+
 
 
     return (
@@ -31,7 +31,7 @@ const Bids = ({ house }) => {
                     </table>
                 </div>
             </div>
-            <BidForm house={house} addBidAPI={addBid} />
+            <BidForm house={house} addBid={addBid} />
         </>)
 
 

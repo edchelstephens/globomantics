@@ -31,7 +31,7 @@ const BidForm = ({ house, addBidAPI }) => {
                         ...newBid,
                         bidder: event.target.value
                     })}
-                />
+                ></input>
             </div>
             <div className="col-5">
                 <input
@@ -45,7 +45,8 @@ const BidForm = ({ house, addBidAPI }) => {
                         ...newBid,
                         amount: parseInt(event.target.value)
                     })}
-                />
+                >
+                </input>
             </div>
             <div className="col-2">
                 <button
