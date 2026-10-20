@@ -2,11 +2,26 @@ import currencyFormatter from "../helpers/currencyFormatter";
 import useBids from "../hooks/useBids";
 import TableHead from "./TableHead";
 import LoadingIndicator from "./LoadingIndicator";
+import BidForm from "./BidForm";
+import { useState } from "react";
 
 const Bids = ({ house }) => {
 
-    const { bids, setBids, isLoading, setIsLoading } = useBids(house.id);
     const headerTexts = ["Bidder", "Amount"]
+    const emptyBid = {
+        houseId: house.id,
+        bidder: "",
+        amount: 0
+    }
+
+    const { bids, isLoading, addBid } = useBids(house.id);
+    const [newBid, setNewBid] = useState(emptyBid);
+
+    const onBidSubmitClick = () => {
+        addBid(newBid);
+        setNewBid(emptyBid);
+    }
+
 
     return (
         isLoading ? <LoadingIndicator text="Loading data..." /> : (<>
@@ -25,6 +40,7 @@ const Bids = ({ house }) => {
                     </table>
                 </div>
             </div>
+            <BidForm bidSubmitAction={onBidSubmitClick} />
         </>)
 
 
