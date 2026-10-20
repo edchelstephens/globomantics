@@ -1,9 +1,24 @@
+import { useState } from "react";
 
 
-const BidForm = ({ newBid, setNewBid, bidSubmitAction }) => {
+
+const BidForm = ({ house, addBidAPI }) => {
+
+    const emptyBid = {
+        houseId: house.id,
+        bidder: "",
+        amount: 0
+    }
+
+    const [newBid, setNewBid] = useState(emptyBid);
+
+    const onBidSubmitClick = () => {
+        addBidAPI(newBid);
+        setNewBid(emptyBid);
+    }
 
     return (
-        <form action={bidSubmitAction} className="row row-cols-lg-auto" >
+        <form action={onBidSubmitClick} className="row row-cols-lg-auto" >
             <div className="col-5">
                 <input
                     type="text"

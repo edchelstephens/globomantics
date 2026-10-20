@@ -8,19 +8,10 @@ import { useState } from "react";
 const Bids = ({ house }) => {
 
     const headerTexts = ["Bidder", "Amount"]
-    const emptyBid = {
-        houseId: house.id,
-        bidder: "",
-        amount: 0
-    }
+    
 
     const { bids, isLoading, addBid } = useBids(house.id);
-    const [newBid, setNewBid] = useState(emptyBid);
-
-    const onBidSubmitClick = () => {
-        addBid(newBid);
-        setNewBid(emptyBid);
-    }
+   
 
 
     return (
@@ -40,7 +31,7 @@ const Bids = ({ house }) => {
                     </table>
                 </div>
             </div>
-            <BidForm newBid={newBid} setNewBid={setNewBid} bidSubmitAction={onBidSubmitClick} />
+            <BidForm house={house} addBidAPI={addBid} />
         </>)
 
 
