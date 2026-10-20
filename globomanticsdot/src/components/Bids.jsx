@@ -40,7 +40,7 @@ const Bids = ({ house }) => {
                     </table>
                 </div>
             </div>
-            <BidForm bidSubmitAction={onBidSubmitClick} />
+            <BidForm newBid={newBid} setNewBid={setNewBid} bidSubmitAction={onBidSubmitClick} />
         </>)
 
 

@@ -1,6 +1,6 @@
 
 
-const BidForm = ({ bidSubmitAction }) => {
+const BidForm = ({ newBid, setNewBid, bidSubmitAction }) => {
 
     return (
         <form action={bidSubmitAction} className="row row-cols-lg-auto" >
@@ -11,6 +11,11 @@ const BidForm = ({ bidSubmitAction }) => {
                     name="bidder"
                     placeholder="Bidder"
                     className="h-100 form-control"
+                    value={newBid.bidder}
+                    onChange={(event) => setNewBid({
+                        ...newBid,
+                        bidder: event.target.value
+                    })}
                 />
             </div>
             <div className="col-5">
@@ -20,6 +25,11 @@ const BidForm = ({ bidSubmitAction }) => {
                     name="amount"
                     placeholder="Amount"
                     className="h-100 form-control"
+                    value={newBid.amount}
+                    onChange={(event) => setNewBid({
+                        ...newBid,
+                        amount: parseInt(event.target.value)
+                    })}
                 />
             </div>
             <div className="col-2">
