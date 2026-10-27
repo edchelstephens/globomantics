@@ -2,7 +2,7 @@ import { useState } from "react";
 
 
 
-const BidForm = ({ house, addBidAPI }) => {
+const BidForm = ({ house, addBid }) => {
 
     const emptyBid = {
         houseId: house.id,
@@ -13,7 +13,7 @@ const BidForm = ({ house, addBidAPI }) => {
     const [newBid, setNewBid] = useState(emptyBid);
 
     const onBidSubmitClick = () => {
-        addBidAPI(newBid);
+        addBid(newBid);
         setNewBid(emptyBid);
     }
 
