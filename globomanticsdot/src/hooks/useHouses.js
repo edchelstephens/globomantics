@@ -51,7 +51,7 @@ const useHouses = () => {
     };
 
     const addHouse = async (newHouse) => {
-        const postedHouse = postHouse(newHouse);
+        const postedHouse = await postHouse(newHouse);
         setHouses(...houses, postedHouse)
     }
 

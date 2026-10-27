@@ -15,9 +15,6 @@ const HouseList = () => {
     const { houses, isLoading, addHouse } = useHouses();
 
 
-
-
-
     const headerTexts = ["Address", "Country", "Asking Price"]
     return (
 
