@@ -12,7 +12,7 @@ const HouseRow = ({ house }) => {
     const navigate = useNavigate();
 
     return (
-        <tr onClick={() => navigate('/house', { state: { house } })}>
+        <tr onClick={() => navigate('/house', { state: { house } })} className={`${house.id}`}>
             <td>{house.address}</td>
             <td>{house.country}</td>
             {
