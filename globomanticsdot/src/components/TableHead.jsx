@@ -3,7 +3,7 @@ const TableHead = ({ headerTexts }) => {
         <thead>
             <tr>
                 {headerTexts.map((text) => (
-                    <th ke={text}>{text}</th>
+                    <th key={text}>{text}</th>
                 ))}
             </tr>
         </thead>
