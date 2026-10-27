@@ -52,7 +52,7 @@ const useHouses = () => {
 
     const addHouse = async (newHouse) => {
         const postedHouse = await postHouse(newHouse);
-        setHouses(...houses, postedHouse)
+        setHouses([...houses, postedHouse])
     }
 
 
