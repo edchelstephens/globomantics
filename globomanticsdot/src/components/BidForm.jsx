@@ -7,7 +7,7 @@ const BidForm = ({ house, addBid }) => {
     const emptyBid = {
         houseId: house.id,
         bidder: "",
-        amount: 0
+        amount: ""
     }
 
     const [newBid, setNewBid] = useState(emptyBid);
