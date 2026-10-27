@@ -27,11 +27,43 @@ const useHouses = () => {
 
     }, []);
 
+
+    const postHouse = async (newHouse) => {
+        try {
+            setIsLoading(true);
+            const response = await fetch("http://localhost:5000/house/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newHouse)
+            });
+
+            const postedHouse = await response.json();
+
+            return postedHouse
+
+        } catch (error) {
+            console.log("Error on postHouse:", error)
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const addHouse = async (newHouse) => {
+        const postedHouse = postHouse(newHouse);
+        setHouses(...houses, postedHouse)
+    }
+
+
+
+
     return {
         houses,
         setHouses,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        addHouse
     };
 };
 

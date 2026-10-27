@@ -3,7 +3,7 @@ import useBids from "../hooks/useBids";
 import TableHead from "./TableHead";
 import LoadingIndicator from "./LoadingIndicator";
 import BidForm from "./BidForm";
-import { useState } from "react";
+
 
 const Bids = ({ house }) => {
 
